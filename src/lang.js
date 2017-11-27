@@ -1,8 +1,10 @@
 var Messages = require('./messages');
 
+require('./lang/en');
+
 var require_method = require;
 
-require_method('./lang/en');
+// require_method('./lang/en');
 
 var container = {
 
@@ -45,7 +47,9 @@ var container = {
   _load: function(lang) {
     if (!this.messages[lang]) {
       try {
-        var rawMessages = require_method('./lang/' + lang);
+        // https://github.com/skaterdav85/validatorjs/issues/65#issuecomment-249673390
+        // var rawMessages = require_method('./lang/' + lang);
+        var rawMessages = require('./lang/en');
         this._set(lang, rawMessages);
       } catch (e) {}
     }
