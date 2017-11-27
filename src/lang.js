@@ -1,8 +1,8 @@
 var Messages = require('./messages');
 
-require('./lang/en');
-
 var require_method = require;
+
+require_method('./lang/en');
 
 var container = {
 
