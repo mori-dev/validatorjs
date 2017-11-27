@@ -334,7 +334,7 @@ module.exports = Errors;
 },{}],4:[function(require,module,exports){
 var Messages = require('./messages');
 
-require('./lang/en');
+require('./lang/ja');
 
 var require_method = require;
 
@@ -383,7 +383,7 @@ var container = {
       try {
         // https://github.com/skaterdav85/validatorjs/issues/65#issuecomment-249673390
         // var rawMessages = require_method('./lang/' + lang);
-        var rawMessages = require('./lang/en');
+        var rawMessages = require('./lang/ja');
         this._set(lang, rawMessages);
       } catch (e) {}
     }
@@ -415,52 +415,42 @@ var container = {
 
 module.exports = container;
 
-},{"./lang/en":5,"./messages":6}],5:[function(require,module,exports){
+},{"./lang/ja":5,"./messages":6}],5:[function(require,module,exports){
 module.exports = {
-  accepted: 'The :attribute must be accepted.',
-  after: 'The :attribute must be after :after.',
-  after_or_equal: 'The :attribute must be equal or after :after_or_equal.',
-  alpha: 'The :attribute field must contain only alphabetic characters.',
-  alpha_dash: 'The :attribute field may only contain alpha-numeric characters, as well as dashes and underscores.',
-  alpha_num: 'The :attribute field must be alphanumeric.',
-  before: 'The :attribute must be before :before.',
-  before_or_equal: 'The :attribute must be equal or before :before_or_equal.',
-  between: 'The :attribute field must be between :min and :max.',
-  confirmed: 'The :attribute confirmation does not match.',
-  email: 'The :attribute format is invalid.',
-  date: 'The :attribute is not a valid date format.',
-  def: 'The :attribute attribute has errors.',
-  digits: 'The :attribute must be :digits digits.',
-  different: 'The :attribute and :different must be different.',
-  'in': 'The selected :attribute is invalid.',
-  integer: 'The :attribute must be an integer.',
-  min: {
-    numeric: 'The :attribute must be at least :min.',
-    string: 'The :attribute must be at least :min characters.'
-  },
-  max: {
-    numeric: 'The :attribute may not be greater than :max.',
-    string: 'The :attribute may not be greater than :max characters.'
-  },
-  not_in: 'The selected :attribute is invalid.',
-  numeric: 'The :attribute must be a number.',
-  present: 'The :attribute field must be present (but can be empty).',
-  required: 'The :attribute field is required.',
-  required_if: 'The :attribute field is required when :other is :value.',
-  required_unless: 'The :attribute field is required when :other is not :value.',
-  required_with: 'The :attribute field is required when :field is not empty.',
-  required_with_all: 'The :attribute field is required when :fields are not empty.',
-  required_without: 'The :attribute field is required when :field is empty.',
-  required_without_all: 'The :attribute field is required when :fields are empty.',
-  same: 'The :attribute and :same fields must match.',
-  size: {
-    numeric: 'The :attribute must be :size.',
-    string: 'The :attribute must be :size characters.'
-  },
-  string: 'The :attribute must be a string.',
-  url: 'The :attribute format is invalid.',
-  regex: 'The :attribute format is invalid.',
-  attributes: {}
+    accepted: ':attributeを確認してください。',
+    alpha: ':attributeは英字のみで入力してください。',
+    alpha_dash: ':attributeは英字とダッシュと下線のみで入力してください。',
+    alpha_num: ':attributeは英数字のみで入力してください。',
+    between: ':attributeは:min〜:max文字で入力してください。',
+    confirmed: ':attributeは確認が一致しません。',
+    email: ':attributeは正しいメールアドレスを入力してください。',
+    date: ':attributeは正しい日付形式を入力してください',
+    def: ':attributeは検証エラーが含まれています。',
+    digits: ':attributeは:digitsの数字のみで入力してください。',
+    different: ':attributeと:differentは同じであってはなりません。',
+    'in': '選択された:attributeは無効です。',
+    integer: ':attributeは整数で入力してください。',
+    min        : {
+        numeric : ":attributeは:min以上で入力してください。",
+        string  : ":attributeは:min文字以上で入力してください。"
+    },
+    max : {
+        numeric : ":attributeは:max以下で入力してください。",
+        string  : ":attributeは:max文字以下で入力してください。"
+    },
+    not_in      : "選択された:attributeは無効です。",
+    numeric     : ":attributeは数値で入力してください。",
+    present: 'The :attribute field must be present (but can be empty).',
+    required    : ":attributeは必須です。",
+    required_if : ":otherは:valueになったら:attributeは必須です。",
+    same        : ":attributeと:sameは同じでなければなりません。",
+    size        : {
+        numeric : ":attributeは:sizeを入力してください。",
+        string  : ":attributeは:size文字で入力してください。"
+    },
+    url        : ":attributeは正しいURIを入力してください。",
+    regex      : ":attributeの値 \":value\" はパターンにマッチする必要があります。",
+    attributes : {}
 };
 
 },{}],6:[function(require,module,exports){
